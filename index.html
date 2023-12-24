@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-               AzjwY9/sAobvOdG8kVlM58tsF0AqL3rMz/4FU1vbIAqTc4jkTV8TI1MCky2fGzIe" crossorigin="anonymous">
+
+    <title>Welcome Page</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="brand">
+            <img src="Images/brand-logo.png" alt="Brand Logo">
+        </div>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Book</a></li>
+            <li class="submenu">
+                <a href="#">Packages</a>
+                <ul class="submenu-content">
+                    <li><a href="#">United States</a></li>
+                    <li><a href="#">India</a></li>
+                    <li><a href="#">France</a></li>
+                    <li><a href="#">Germany</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <div class="auth-buttons">
+        <button class="login-button" id="loginButton">Login</button>
+        <button class="register-button">Register</button>
+    </div>
+    </nav>
+
+    <!-- Background Image Section -->
+    <section class="background-image-section">
+        <div class="background-text">
+            <h1>Welcome to Mount Travel</h1>
+            <h2>Visit <span id="placeName">United States</span></h2>
+            <button class="book-now-button">Book Now</button>
+        </div>
+    </section>
+
+    <!-- Two Sections (50% width each) -->
+    <div class="row">
+        <!-- Left Section with Brand Image -->
+        <div class="col-md-6">
+            <img src="Images/brand-logo.png" alt="Brand Logo" class="img-fluid">
+        </div>
+
+        <!-- Right Section with Booking Form -->
+        <div class="col-md-6">
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="destination">Where to</label>
+                    <select class="form-control" id="destination" name="destination">
+                        <option value="USA">USA</option>
+                        <option value="India">India</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="persons">How Many Person</label>
+                    <input type="number" class="form-control" id="persons" name="persons" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" class="form-control" id="startDate" name="startDate" min="2023-11-25">
+                </div>
+                <div class="form-group">
+                    <label for="endDate">End Date</label>
+                    <input type="date" class="form-control" id="endDate" name="endDate" min="2023-11-26">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" minlength="50" maxlength="500"></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="bookNow()">Book Now</button>
+            </form>
+        </div>
+    </div>
+
+ <!-- Package Gallery Section -->
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <!-- Package Card -->
+            <div class="card">
+                <img src="Images/USA.jpg" class="card-img-top" alt="USA">
+                <div class="card-body">
+                    <h5 class="card-title">USA</h5>
+                    <p class="card-text">United States is great place to visit.</p>
+                    <p class="card-text">Price: $8999</p>
+                    <p class="card-text">Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <!-- Package Card -->
+            <div class="card">
+                <img src="Images/Italy.jpg" class="card-img-top" alt="Italy">
+                <div class="card-body">
+                    <h5 class="card-title">Italy</h5>
+                    <p class="card-text">Italy is great place to visit.</p>
+                    <p class="card-text">Price: $6999</p>
+                    <p class="card-text">Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <!-- Package Card -->
+            <div class="card">
+                <img src="Images/Singapore.jpg" class="card-img-top" alt="Singapore">
+                <div class="card-body">
+                    <h5 class="card-title">Singapore</h5>
+                    <p class="card-text">Singapore is great place to visit.</p>
+                    <p class="card-text">Price: $7999</p>
+                    <p class="card-text">Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <!-- Package Card -->
+            <div class="card">
+                <img src="Images/Japan.jpg" class="card-img-top" alt="Japan">
+                <div class="card-body">
+                    <h5 class="card-title">Japan</h5>
+                    <p class="card-text">Japan is great place to visit.</p>
+                    <p class="card-text">Price: $6999</p>
+                    <p class="card-text">Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <!-- Package Card -->
+            <div class="card">
+                <img src="Images/India.jpg" class="card-img-top" alt="India">
+                <div class="card-body">
+                    <h5 class="card-title">India</h5>
+                    <p class="card-text">East or west India is the best</p>
+                    <p class="card-text">Price: $300</p>
+                    <p class="card-text">Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <!-- Package Card -->
+            <div class="card">
+                <img src="Images/Australia.jpg" class="card-img-top" alt="Australia">
+                <div class="card-body">
+                    <h5 class="card-title">Australia</h5>
+                    <p class="card-text">Australia is the best place to visit.</p>
+                    <p class="card-text">Price: $3999</p>
+                    <p class="card-text">Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <!-- Package Card -->
+            <div class="card">
+                <img src="Images/Malaysia.jpg" class="card-img-top" alt="Malaysia">
+                <div class="card-body">
+                    <h5 class="card-title">Malaysia</h5>
+                    <p class="card-text">Malaysia is the best place to visit.</p>
+                    <p class="card-text">Price: $4999</p>
+                    <p class="card-text">Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!-- Package Card -->
+            <div class="card">
+                <img src="Images/Indonesia.jpg" class="card-img-top" alt="Indonesia">
+                <div class="card-body">
+                    <h5 class="card-title">Indonesia</h5>
+                    <p class="card-text">Indonesia is the best place to visit.</p>
+                    <p class="card-text">Price: $2999</p>
+                    <p class="card-text">Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!-- Package Card -->
+            <div class="card">
+                <img src="Images/China.jpg" class="card-img-top" alt="China">
+                <div class="card-body">
+                    <h5 class="card-title">China</h5>
+                    <p class="card-text">China is the best place to visit</p>
+                    <p class="card-text">Price: $7999</p>
+                    <p class="card-text">Rating: ⭐⭐⭐⭐</p>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Services Section -->
+    <div class="row mt-4">
+        <!-- Service 1 -->
+        <div class="col-md-4">
+            <!-- Service Card -->
+            <div class="card service-card">
+                <div class="card-body">
+                    <h5 class="card-title">Affordable Hotel</h5>
+                    <p class="card-text">Our hotels offer a comfortable stay at affordable prices.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col-md-4">
+            <!-- Service Card -->
+            <div class="card service-card">
+                <div class="card-body">
+                    <h5 class="card-title">Customized Tours</h5>
+                    <p class="card-text">Tailor-made tours to suit your preferences and interests.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-md-4">
+            <!-- Service Card -->
+            <div class="card service-card">
+                <div class="card-body">
+                    <h5 class="card-title">24/7 Customer Support</h5>
+                    <p class="card-text">Round-the-clock assistance for a seamless travel experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <!-- Service 4 -->
+        <div class="col-md-4">
+            <!-- Service Card -->
+            <div class="card service-card">
+                <div class="card-body">
+                    <h5 class="card-title">Exclusive Deals</h5>
+                    <p class="card-text">Access to special offers and discounts for our loyal customers.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="col-md-4">
+            <!-- Service Card -->
+            <div class="card service-card">
+                <div class="card-body">
+                    <h5 class="card-title">Adventure Packages</h5>
+                    <p class="card-text">Thrilling adventures crafted for the adrenaline junkie in you.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="col-md-4">
+            <!-- Service Card -->
+            <div class="card service-card">
+                <div class="card-body">
+                    <h5 class="card-title">Cruise Voyages</h5>
+                    <p class="card-text">Experience luxury on the seas with our exclusive cruise packages.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--Checkpoint3-->
+
+<!-- Gallery Section -->
+<div class="row mt-4" id="gallerySection">
+    <!-- Gallery Item 1 -->
+    <div class="col-md-4">
+        <div class="card gallery-card">
+            <img src="Images/gallery/image1.jpg" class="card-img-top" alt="Gallery Image 1">
+            <div class="card-body">
+                <p class="card-text">Experience the beauty of nature</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Item 2 -->
+    <div class="col-md-4">
+        <div class="card gallery-card">
+            <img src="Images/gallery/image2.jpg" class="card-img-top" alt="Gallery Image 2">
+            <div class="card-body">
+                <p class="card-text">Unforgettable moments with Mount Travel</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Item 3 -->
+    <div class="col-md-4">
+        <div class="card gallery-card">
+            <img src="Images/gallery/image3.jpg" class="card-img-top" alt="Gallery Image 3">
+            <div class="card-body">
+                <p class="card-text">Discover hidden treasures</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About Us Section -->
+<div class="row mt-4" id="aboutUsSection">
+    <!-- Left Section with Company Image -->
+    <div class="col-md-6">
+        <img src="Images/company-image.jpg" class="img-fluid" alt="Company Image">
+    </div>
+
+    <!-- Right Section with Company Information -->
+    <div class="col-md-6">
+        <div class="about-us-content">
+            <h2>About Us</h2>
+            <p>Welcome to Mount Travel, your gateway to unforgettable journeys and experiences. Our passion for travel and commitment to delivering exceptional services make us your ideal travel companion.</p>
+            <p>Established in [Year], Mount Travel has been dedicated to providing customized tours, affordable hotel accommodations, and round-the-clock customer support. Our team of experts curates adventures that cater to your preferences and interests.</p>
+            <p>At Mount Travel, we believe in creating memories that last a lifetime. Whether you're seeking the thrill of adventure packages, the luxury of cruise voyages, or exclusive deals for loyal customers, we have something special for every traveler.</p>
+            <p>Discover the world with Mount Travel and embark on a journey that goes beyond the ordinary.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer mt-4">
+    <div class="container">
+        <div class="row">
+            <!-- Brand Name -->
+            <div class="col-md-6">
+                <p class="brand-name">Mount Travel</p>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="col-md-6 text-right">
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <!-- Add more social media icons as needed -->
+            </div>
+        </div>
+
+        <!-- Copyright Message -->
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <p class="copyright-message">&copy; 2023 Mount Travel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal for Register Form -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Register Form -->
+                <form id="registerForm" onsubmit="return validateRegisterForm()">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact</label>
+                        <input type="text" class="form-control" id="contact" name="contact" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" class="form-control" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email ID</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label><br>
+                        <label class="gender-label">
+                            <input type="radio" class="form-check-input" name="gender" value="male" required> Male
+                        </label>
+                        <label class="gender-label ml-3">
+                            <input type="radio" class="form-check-input" name="gender" value="female" required> Female
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+                <div class="mt-3">
+    <p>Already have an account? <a href="#" onclick="closeRegisterModalAndOpenLogin()">Login</a></p>
+</div>
+
+                <div id="registrationSuccessMessage" style="display: none; color: green;">
+                    Registration Successful!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Login Form -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Login Form -->
+                <form id="loginForm" onsubmit="return validateLoginForm()">
+                    <div class="form-group">
+                        <label for="loginEmail">Email ID</label>
+                        <input type="email" class="form-control" id="loginEmail" name="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" name="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <div class="mt-3">
+    <p>Don't have an account? <a href="#" onclick="closeLoginModalAndOpenRegister()">Register</a></p>
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>
